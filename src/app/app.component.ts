@@ -8,17 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name = 'Charles';
 
-  add() {
-    console.log(`Adicionando ${this.name}...`)
+  add(name: string) {
+    console.log(name);
 
-    const number = Math.round(Math.random() * 100);
-
-    this.name = `João ${number}`;
-  }
-
-  changeName(event: any) {
-    console.log(event);
-
-    this.name = (event.target.value);
+    this.name = name;
   }
 }
