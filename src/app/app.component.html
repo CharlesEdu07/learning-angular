@@ -2,9 +2,20 @@
     <div class="alert alert-success" role="alert" *ngIf="added">
         Funcionário adicionado: <strong>{{ name }}</strong>
     </div>
+
     <div class="form-group">
         <label for="formGroupExampleInput">Nome</label>
         <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="name" (focus)="added = false">
     </div>
+
     <button type="button" class="btn btn-primary" (click)="add()" [disabled]="name.length == 0">Adicionar</button>
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-2" *ngFor="let emp of employees">
+            <div class="card">
+                <img class="card-img-top" src="https://randomuser.me/api/portraits/men/1.jpg" alt="Card image cap">
+                <div class="card-block">{{ emp }}</div>
+            </div>
+        </div>
+    </div>
 </div>
