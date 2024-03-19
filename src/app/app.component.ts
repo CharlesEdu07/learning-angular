@@ -10,5 +10,9 @@ export class AppComponent {
 
   add() {
     console.log(`Adicionando ${this.name}...`)
+
+    const number = Math.round(Math.random() * 100);
+
+    this.name = `João ${number}`;
   }
 }
