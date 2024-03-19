@@ -12,11 +12,7 @@
 
     <div class="row" style="margin-top: 20px;">
         <div class="col-2" *ngFor="let emp of employees">
-            <div class="card">
-                <img class="card-img-top" src="https://randomuser.me/api/portraits/men/{{ emp.id }}.jpg"
-                    alt="Card image cap">
-                <div class="card-block">{{ emp.name }}</div>
-            </div>
+            <app-employee-card [employee]="emp"></app-employee-card>
         </div>
     </div>
 </div>
