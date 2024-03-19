@@ -7,9 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'Charles';
-  age = 21;
 
-  getAge() {
-    return this.age;
+  add() {
+    console.log(`Adicionando ${this.name}...`)
   }
 }
