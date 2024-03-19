@@ -15,4 +15,10 @@ export class AppComponent {
 
     this.name = `João ${number}`;
   }
+
+  changeName(event: any) {
+    console.log(event);
+
+    this.name = (event.target.value);
+  }
 }
