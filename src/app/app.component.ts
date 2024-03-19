@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  lastId = 0;
   name = 'Charles';
   added = false;
   employees = [];
@@ -15,6 +16,9 @@ export class AppComponent {
 
     this.added = true;
 
-    this.employees.push(this.name);
+    this.employees.push({
+      id: ++this.lastId,
+      name: this.name,
+    });
   }
 }
