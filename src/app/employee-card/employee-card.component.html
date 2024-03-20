@@ -1,4 +1,6 @@
 <div class="card" [ngStyle]="getCardStyles()">
   <img class="card-img-top" src="https://randomuser.me/api/portraits/men/{{ employee.id }}.jpg" alt="Card image cap">
-  <div class="card-block">{{ employee.name }}</div>
+  <div class="card-block"><span class="badge" [ngClass]="{ 'badge-danger': isAdmin(), 'badge-primary': !isAdmin() }">{{
+      employee.name
+      }}</span></div>
 </div>
