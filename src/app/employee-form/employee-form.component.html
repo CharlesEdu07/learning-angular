@@ -4,7 +4,8 @@
 
 <div class="form-group">
   <label for="formGroupExampleInput">Nome</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="name" (focus)="added = false">
+  <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="name" (focus)="added = false"
+    appColoredField>
 </div>
 
 <button type="button" class="btn btn-primary" (click)="add()" [disabled]="name.length == 0">Adicionar</button>
