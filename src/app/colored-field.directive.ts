@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appColoredField]'
@@ -6,7 +6,15 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
 export class ColoredFieldDirective {
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-    console.log(this.elementRef.nativeElement);
+  }
+
+  @HostListener('focus')
+  onFocus() {
     this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'yellow');
+  }
+
+  @HostListener('blur')
+  onBlur() {
+    this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', 'transparent');
   }
 }
