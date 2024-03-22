@@ -5,7 +5,9 @@
 <div class="form-group">
   <label for="formGroupExampleInput">Nome</label>
   <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="name" (focus)="added = false"
-    appColoredField [color]="'red'">
+    appColoredField [color]="'red'" #field="coloredField">
 </div>
 
 <button type="button" class="btn btn-primary" (click)="add()" [disabled]="name.length == 0">Adicionar</button>
+<button class="btn btn-info" (click)="field.onFocus()">Colorir campo</button>
+<button class="btn btn-info" (click)="field.onBlur()">Descolorir campo</button>

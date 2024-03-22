@@ -1,7 +1,7 @@
 import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appColoredField]'
+  selector: '[appColoredField]', exportAs: 'coloredField'
 })
 export class ColoredFieldDirective {
 
