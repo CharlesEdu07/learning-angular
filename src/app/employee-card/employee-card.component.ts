@@ -3,7 +3,6 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-employee-card',
   templateUrl: './employee-card.component.html',
-  // styleUrls: ['./employee-card.component.css'],
   styles: [`
     .card-block {
       text-transform: uppercase;
@@ -13,19 +12,4 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EmployeeCardComponent {
   @Input() employee: any;
-
-  isAdmin() {
-    return this.employee.name.startsWith('C');
-  }
-
-  getCardStyles() {
-    return {
-      borderWidth: this.employee.id % 2 === 0 ? '3px' : '1px',
-      backgroundColor: this.employee.id % 2 === 0 ? 'lightblue' : 'lightgreen'
-    };
-  }
-
-  // getCssClasses() {
-  //   return ['badge', 'badge-default'];
-  // }
 }

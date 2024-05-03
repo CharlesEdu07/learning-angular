@@ -1,28 +1,19 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { EmployeeService } from 'app/employee.service';
 
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
   styleUrls: ['./employee-form.component.css']
 })
-export class EmployeeFormComponent implements OnInit {
-  lastId = 0;
-  name = 'Charles';
-  added = false;
-  @Output() addedEmployee = new EventEmitter();
+export class EmployeeFormComponent {
+  employeeService: EmployeeService;
 
-  constructor() { }
+  constructor() {
+    this.employeeService = new EmployeeService();
+  }
 
-  ngOnInit() { }
-
-  add() {
-    this.added = true;
-
-    const employee = {
-      id: ++this.lastId,
-      name: this.name,
-    };
-
-    this.addedEmployee.emit(employee);
+  add(name: string) {
+    this.employeeService.add(name);
   }
 }

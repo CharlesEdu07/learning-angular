@@ -1,13 +1,6 @@
-<div class="alert alert-success" role="alert" *ngIf="added">
-  Funcionário adicionado: <strong>{{ name }}</strong>
-</div>
-
 <div class="form-group">
-  <label for="formGroupExampleInput">Nome</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="name" (focus)="added = false"
-    appColoredField [color]="'red'" #field="coloredField">
+  <input type="text" class="form-control" #name>
 </div>
 
-<button type="button" class="btn btn-primary" (click)="add()" [disabled]="name.length == 0">Adicionar</button>
-<button class="btn btn-info" (click)="field.onFocus()">Colorir campo</button>
-<button class="btn btn-info" (click)="field.onBlur()">Descolorir campo</button>
+<button type="button" class="btn btn-primary" (click)="add(name.value); name.value=''"
+  [disabled]="name.length == 0">Adicionar</button>
