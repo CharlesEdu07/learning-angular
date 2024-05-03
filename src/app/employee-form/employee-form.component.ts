@@ -7,10 +7,8 @@ import { EmployeeService } from 'app/employee.service';
   styleUrls: ['./employee-form.component.css']
 })
 export class EmployeeFormComponent {
-  employeeService: EmployeeService;
 
-  constructor() {
-    this.employeeService = new EmployeeService();
+  constructor(private employeeService: EmployeeService) {
   }
 
   add(name: string) {

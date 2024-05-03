@@ -8,10 +8,8 @@ import { EmployeeService } from './employee.service';
 })
 export class AppComponent implements OnInit {
   employees = [];
-  employeeService: EmployeeService;
 
-  constructor() {
-    this.employeeService = new EmployeeService();
+  constructor(private employeeService: EmployeeService) {
   }
 
   ngOnInit() {
