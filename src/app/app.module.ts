@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
-import { EmployeeService } from './employee.service';
+import { AbbreviatedEmployeeService, EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,9 @@ import { EmployeeService } from './employee.service';
   imports: [
     BrowserModule,
   ],
-  providers: [EmployeeService],
+  providers: [
+    { provide: EmployeeService, useClass: AbbreviatedEmployeeService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

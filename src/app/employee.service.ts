@@ -23,3 +23,9 @@ export class EmployeeService {
     return this.employee;
   }
 }
+
+export class AbbreviatedEmployeeService extends EmployeeService {
+  add(name: string) {
+    super.add(name.substring(0, 3) + '...');
+  }
+}
