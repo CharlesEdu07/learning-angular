@@ -25,7 +25,12 @@ export class EmployeeService {
 }
 
 export class AbbreviatedEmployeeService extends EmployeeService {
+
+  constructor(private characterLimit: number) {
+    super();
+  }
+
   add(name: string) {
-    super.add(name.substring(0, 3) + '...');
+    super.add(name.substring(0, this.characterLimit) + '...');
   }
 }

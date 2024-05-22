@@ -6,6 +6,10 @@ import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { AbbreviatedEmployeeService, EmployeeService } from './employee.service';
 
+export const createEmployeeService = () => {
+  return new AbbreviatedEmployeeService(2);
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +20,7 @@ import { AbbreviatedEmployeeService, EmployeeService } from './employee.service'
     BrowserModule,
   ],
   providers: [
-    { provide: EmployeeService, useClass: AbbreviatedEmployeeService }
+    { provide: EmployeeService, useFactory: createEmployeeService}
   ],
   bootstrap: [AppComponent]
 })
