@@ -13,7 +13,6 @@ export class EmployeeFormComponent {
   }
 
   add(name: string) {
-    this.logService.log(`Adding employee: ${name}`);
     this.employeeService.add(name);
   }
 }

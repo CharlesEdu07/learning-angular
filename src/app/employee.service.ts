@@ -1,6 +1,9 @@
+import { Injectable } from "@angular/core";
+import { LogService } from "./log.service";
+
+@Injectable()
 export class EmployeeService {
   lastId = 1;
-
   employee = [
     {
       id: 1,
@@ -8,7 +11,13 @@ export class EmployeeService {
     }
   ];
 
+  constructor(private logService: LogService) {
+
+  }
+
   add(name: string) {
+    this.logService.log(`Adding employee: ${name}`);
+
     const employee = {
       id: ++this.lastId,
       name: name,
@@ -21,16 +30,5 @@ export class EmployeeService {
 
   get() {
     return this.employee;
-  }
-}
-
-export class AbbreviatedEmployeeService extends EmployeeService {
-
-  constructor(private characterLimit: number) {
-    super();
-  }
-
-  add(name: string) {
-    super.add(name.substring(0, this.characterLimit) + '...');
   }
 }
