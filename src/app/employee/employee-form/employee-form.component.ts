@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { EmployeeService } from 'app/employee.service';
-import { LogService } from 'app/log.service';
+import { EmployeeService } from 'app/employee/employee.service';
 
 @Component({
   selector: 'app-employee-form',
@@ -9,7 +8,7 @@ import { LogService } from 'app/log.service';
 })
 export class EmployeeFormComponent {
 
-  constructor(private employeeService: EmployeeService, private logService: LogService) {
+  constructor(private employeeService: EmployeeService) {
   }
 
   add(name: string) {
